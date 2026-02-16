@@ -2,20 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-    <title>Open World Racer Escape - Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Open World Racer Escape - Pro UI</title>
     <link rel="stylesheet" href="style.css">
-    
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/npm/phaser3-rex-plugins@1.1.77/dist/rexvirtualjoystickplugin.min.js"></script>
 </head>
 <body>
 
     <div id="game-container"></div>
 
+    <div id="ui-layer">
+        
+        <div id="pause-container">
+            <img src="pause_icon.png" id="pause-btn" alt="Pause">
+        </div>
+
+        <div id="boost-container">
+            <img src="boost_icon.png" id="boost-btn" alt="Boost">
+            <div id="boost-cooldown-overlay"></div>
+        </div>
+
+        <div id="spawn-warning" class="hidden">
+            <img src="warning_arrow.png" alt="Warning">
+        </div>
+
+        <div id="heat-effect"></div>
+
+        <div id="game-over-screen" class="hidden">
+            <div class="modal">
+                <h1>BUSTED!</h1>
+                <p id="final-score">SCORE: 0</p>
+                <div class="menu-buttons">
+                    <img src="rematch_icon.png" id="rematch-btn" class="ui-icon" alt="Rematch">
+                    <img src="home_icon.png" id="home-btn" class="ui-icon" alt="Home">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="orientation-warning">
-        Please Rotate Your Device 🔄
+        Please Rotate Your Device 
     </div>
 
     <script src="game.js"></script>
