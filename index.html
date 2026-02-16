@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Open World Racer Escape - Pro UI</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/phaser3-rex-plugins@1.1.77/dist/rexvirtualjoystickplugin.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<title>Racer Escape</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Phaser -->
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/phaser3-rex-plugins/dist/rexvirtualjoystickplugin.min.js"></script>
 </head>
+
 <body>
 
-    <div id="game-container"></div>
+<!-- GAME CANVAS -->
+<div id="game-container"></div>
 
-    <div id="ui-layer">
-        
-        <div id="pause-container">
-            <img src="pause_icon.png" id="pause-btn" alt="Pause">
-        </div>
+<!-- ===== UI LAYER (PRD STYLE) ===== -->
+<div id="ui-layer">
 
-        <div id="boost-container">
-            <img src="boost_icon.png" id="boost-btn" alt="Boost">
-            <div id="boost-cooldown-overlay"></div>
-        </div>
+<!-- TOP HUD -->
+<div id="hud-top">
+<div id="score-text">SCORE: 0</div>
+<button id="pause-btn"></button>
+</div>
 
-        <div id="spawn-warning" class="hidden">
-            <img src="warning_arrow.png" alt="Warning">
-        </div>
+<!-- BOOST BUTTON -->
+<div id="boost-container">
+<button id="boost-btn"></button>
+<div id="boost-cooldown-overlay"></div>
+</div>
 
-        <div id="heat-effect"></div>
+<!-- HEAT EFFECT -->
+<div id="heat-effect"></div>
 
-        <div id="game-over-screen" class="hidden">
-            <div class="modal">
-                <h1>BUSTED!</h1>
-                <p id="final-score">SCORE: 0</p>
-                <div class="menu-buttons">
-                    <img src="rematch_icon.png" id="rematch-btn" class="ui-icon" alt="Rematch">
-                    <img src="home_icon.png" id="home-btn" class="ui-icon" alt="Home">
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- GAME OVER -->
+<div id="game-over-screen" class="hidden">
+<div class="modal">
+<h1>BUSTED!</h1>
+<p id="final-score">SCORE: 0</p>
 
-    <div id="orientation-warning">
-        Please Rotate Your Device 
-    </div>
+<div class="menu-buttons">
+<button id="rematch-btn" class="action-btn">REMATCH</button>
+<button id="home-btn" class="action-btn">HOME</button>
+</div>
+</div>
+</div>
 
-    <script src="game.js"></script>
+</div>
+
+<!-- ORIENTATION WARNING -->
+<div id="orientation-warning">
+Please Rotate Your Device 
+</div>
+
+<!-- GAME SCRIPT LAST -->
+<script src="game.js"></script>
+
 </body>
 </html>
